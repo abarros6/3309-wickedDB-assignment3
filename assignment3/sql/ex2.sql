@@ -1,4 +1,4 @@
-CREATE TABLE Equipment(
+CREATE TABLE CourseEquipment(
     deviceNo int,
     deviceName varchar(255),
     courseAssigned int,
@@ -8,18 +8,18 @@ CREATE TABLE Equipment(
 
 CREATE TABLE Schedule(
     scheduledToStudent varchar(255),
-    courseNames varchar(255),
     coursesEnrolled int,
-    studentsEnrolledInClass int,
-    totalStudentsEnrolled int
+    totalStudentsEnrolled int,
+    studentNo int
 );
 
 CREATE TABLE Course(
     courseID int,
     courseName varchar(255),
     courseClassroom int,
-    courseDept varchar(255),
-    courseYear int
+    deptName varchar(255),
+    courseYear int,
+    instructorNo int
 );
 
 CREATE TABLE Student(
@@ -30,13 +30,16 @@ CREATE TABLE Student(
     studentYear int,
     studentAverage int,
     creditsToDate int,
-    homeClassroom int,
-    numberOfClasses int
+    numberOfClasses int,
+    classroomNo int,
+    instructorNo int
 );
 
 CREATE TABLE Instructor(
     instructorNo int,
-    homeClassroom int
+    classroomNo int,
+    deptName varchar(255),
+    coursesTaught int
 );
 
 CREATE TABLE AdminStaff(
@@ -53,7 +56,7 @@ CREATE TABLE Department(
 
 CREATE TABLE Staff(
     staffNo int,
-    deptAssigned varchar(255),
+    deptName varchar(255),
     fName varchar(255),
     lName varchar(255)
 );
@@ -61,5 +64,28 @@ CREATE TABLE Staff(
 CREATE TABLE Classroom(
     classroomNo int,
     homeInstructor varchar(255),
-    classroomQuantity int
+    classroomQuantity int,
+    coursesTaught int
+);
+
+CREATE TABLE Enrollment(
+    studentNo int,
+    courseID int,
+    dateEnrolled DATE
+);
+
+CREATE TABLE Timing(
+    scheduledToStudent int,
+    courseID int,
+    startDate DATE,
+    endDate DATE,
+    startTime TIME,
+    endTime TIME
+);
+
+CREATE TABLE Allotment(
+    instructorNo int,
+    classroomNo int,
+    dateAssigned DATE,
+    timeAssigned TIME
 );
