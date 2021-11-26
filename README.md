@@ -1,3 +1,3 @@
-Welcome to the assignment submission for group .....
+3309 Assignment 3 - WickedDB_2 - November 2021
 
-edit this later
+Authors: Anthony Barros, Prabh Simran Bhatia, Swarit Dhoalkia, Ryan Hayter, Andrew Tobar
