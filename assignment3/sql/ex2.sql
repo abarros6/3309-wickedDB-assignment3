@@ -40,7 +40,6 @@ CREATE TABLE Instructor(
     classroomNo int,
     deptName varchar(255),
     coursesTaught int,
-    staffNo int,
     fName varchar(255),
     lName varchar(255)
 );
@@ -49,7 +48,6 @@ CREATE TABLE AdminStaff(
     adminNo int,
     position varchar(255),
     startDate DATE,
-    staffNo int,
     deptName varchar(255),
     fName varchar(255),
     lName varchar(255)
