@@ -77,7 +77,7 @@ CREATE TABLE Enrollment(
 );
 
 CREATE TABLE Timing(
-    scheduledToStudent int,
+    scheduledToStudent varchar(255),
     courseID int,
     startDate DATE,
     endDate DATE,
