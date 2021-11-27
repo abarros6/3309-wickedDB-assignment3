@@ -1,0 +1,20 @@
+{
+  "name": "3309-wickeddb-assignment3",
+  "version": "1.0.0",
+  "description": "Welcome to the assignment submission for group .....",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abarros6/3309-wickedDB-assignment3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abarros6/3309-wickedDB-assignment3/issues"
+  },
+  "homepage": "https://github.com/abarros6/3309-wickedDB-assignment3#readme"
+}
