@@ -11,7 +11,7 @@ def convertStudent(data):
     r = open('StudentTuples.txt', "a")
 
     for x in tuples:
-        r.write(',' + str((x['studentNo'], x['fName'], x['lName'], x['studentYear'], x['studentAverage'],
+        r.write(',' + str((x['studentNo'], x['fName'], x['lName'], x['studentAge'], x['studentYear'], x['studentAverage'],
                            x['creditsToDate'], x['numberOfClasses'], x['classroomNo'], x['instructorNo'])))
 
 
