@@ -2,7 +2,10 @@
 
 Authors: Anthony Barros, Prabh Simran Bhatia, Swarit Dholakia, Ryan Hayter, Andrew Tobar
 
-QUESTION 7 and 8 BELOW:
+QUESTION 2, 7 and 8 BELOW:
+
+2.
+<img width="632" alt="Screen Shot 2021-11-27 at 12 00 55 AM" src="https://user-images.githubusercontent.com/37852687/143668694-40029ade-5275-439c-aa46-73cd22855238.png">
 
 7.
 The first 2 views are updatable as they select from only one table and include the primary
