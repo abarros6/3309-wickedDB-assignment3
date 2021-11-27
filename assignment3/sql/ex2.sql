@@ -3,7 +3,7 @@ CREATE TABLE CourseEquipment(
     deviceName varchar(255),
     courseAssigned int,
     studentNo int,
-    dueDate DATE
+    dueDate DATE,
     PRIMARY KEY (deviceNo),
     FOREIGN KEY (courseAssigned) REFERENCES Course(courseID)
     ON DELETE SET NULL ON UPDATE CASCADE,
@@ -15,7 +15,7 @@ CREATE TABLE Schedule(
     scheduledToStudent varchar(255),
     coursesEnrolled int,
     totalStudentsEnrolled int,
-    studentNo int
+    studentNo int,
     PRIMARY KEY (scheduledToStudent),
     FOREIGN KEY (studentNo) REFERENCES Student(studentNo)
     ON DELETE SET NULL ON UPDATE CASCADE
@@ -27,7 +27,7 @@ CREATE TABLE Course(
     courseClassroom int,
     deptName varchar(255),
     courseYear int,
-    instructorNo int
+    instructorNo int,
     PRIMARY KEY (courseID),
     FOREIGN KEY (courseClassroom) REFERENCES Classroom(classroomNo)
     ON DELETE SET NULL ON UPDATE CASCADE,
@@ -47,7 +47,7 @@ CREATE TABLE Student(
     creditsToDate int,
     numberOfClasses int,
     classroomNo int,
-    instructorNo int
+    instructorNo int,
     PRIMARY KEY (studentNo),
     FOREIGN KEY (classroomNo) REFERENCES Classroom(classroomNo)
     ON DELETE SET NULL ON UPDATE CASCADE,
@@ -62,7 +62,7 @@ CREATE TABLE Instructor(
     coursesTaught int,
     fName varchar(255),
     lName varchar(255),
-    salary int
+    salary int,
     PRIMARY KEY (instructorNo),
     FOREIGN KEY (classroomNo) REFERENCES Classroom(classroomNo)
     ON DELETE SET NULL ON UPDATE CASCADE
@@ -76,14 +76,14 @@ CREATE TABLE AdminStaff(
     deptName varchar(255),
     fName varchar(255),
     lName varchar(255),
-    salary int
+    salary int,
     PRIMARY KEY (adminNo)
 );
 
 CREATE TABLE Department(
     deptName varchar(255),
     instructorsAssiged int,
-    studentsEnrolled int
+    studentsEnrolled int,
     PRIMARY KEY (deptName)
 );
 
@@ -93,7 +93,7 @@ CREATE TABLE Classroom(
     classroomNo int,
     homeInstructor int,
     classroomQuantity int,
-    coursesTaught int
+    coursesTaught int,
     PRIMARY KEY (classroomNo),
     FOREIGN KEY (homeInstructor) REFERENCES Instructor(instructorNo)
     ON DELETE SET NULL ON UPDATE CASCADE
@@ -102,7 +102,7 @@ CREATE TABLE Classroom(
 CREATE TABLE Enrollment(
     studentNo int,
     courseID int,
-    dateEnrolled DATE
+    dateEnrolled DATE,
     PRIMARY KEY (studentNo,courseID),
     FOREIGN KEY (studentNo) REFERENCES Student(studentNo)
     ON DELETE SET NULL ON UPDATE CASCADE,
@@ -116,7 +116,7 @@ CREATE TABLE Timing(
     startDate DATE,
     endDate DATE,
     startTime TIME,
-    endTime TIME
+    endTime TIME,
     PRIMARY KEY (scheduledToStudent),
     FOREIGN KEY (courseID) REFERENCES Course(courseID)
     ON DELETE SET NULL ON UPDATE CASCADE
@@ -126,7 +126,7 @@ CREATE TABLE Allotment(
     instructorNo int,
     classroomNo int,
     dateAssigned DATE,
-    timeAssigned TIME
+    timeAssigned TIME,
     PRIMARY KEY (instructorNo,classroomNo),
     FOREIGN KEY (instructorNo) REFERENCES Instructor(instructorNo)
     ON DELETE SET NULL ON UPDATE CASCADE,
