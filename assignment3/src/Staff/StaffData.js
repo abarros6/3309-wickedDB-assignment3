@@ -1,5 +1,9 @@
+let Names = require('./names.js');
+
+let names = Names.names;
+
 let staffJson = {
-    staffData: []
+    staff: []
 };
 
 function getRndInteger(min, max) {
@@ -7,18 +11,24 @@ function getRndInteger(min, max) {
 }
 
 class staff {
-    constructor() {
-        this.classId = classId;
-        this.classroomNo = classroomNo;
-        this.homeInstructor = homeInstructor;
-        this.classroomQuantity = classroomQuantity;
+    constructor(staffNo, deptAssigned, StaffName) {
+        this.staffNo = staffNo;
+        this.deptAssigned = deptAssigned;
+        this.StaffName = StaffName;
     }
 }
 
-//-----
+function getDeptAssigned() {
+    let depts = ["Math", "Science", "Social_Science", "English", "French", "Physical_Activities"];
+    return depts[getRndInteger(0,5)];
+}
+
+function getStaffName() {
+    return names[getRndInteger(0, names.length - 1)];
+}
 
 function createTuple (id) {
-    let tuple = new staff(id);
+    let tuple = new staff(id, getDeptAssigned(), getStaffName());
     return tuple;
 }
 
