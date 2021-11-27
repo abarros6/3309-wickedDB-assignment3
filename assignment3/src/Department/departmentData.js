@@ -7,7 +7,8 @@ function getRndInteger(min, max) {
 }
 
 class department {
-    constructor(deptName, instructorsAssigned, studentsEnrolled) {
+    constructor(deptId, deptName, instructorsAssigned, studentsEnrolled) {
+        this.deptId = deptId;
         this.deptName = deptName;
         this.instructorsAssigned = instructorsAssigned;
         this.studentsEnrolled = studentsEnrolled;
@@ -17,21 +18,15 @@ class department {
 function getDeptName () {
     let departmentNamesList = ["Math", "Science", "Social_Sciences", "French", "English", "Physical_Activities"];
 
-    for (let i = 1; i <= 66; i++)
-        return departmentNamesList[getRndInteger(0,5)]
+    for (let i = 0; i < 6; i++)
+        return departmentNamesList[i]
+        departmentNamesList.remove(i)
 
 }
 
 function getInstructorsAssigned () {
-    let instrucotrIDlist = [];
-        for (let i = 1; i < 67; i++) {
-            list.push(i);
-        }
 
-        for (let i = 1; i < 67; i++)
-            let currentrandnumber = getRndInteger(0,instrucotrIDlist.length)
-            return instrucotrIDlist[currentrandnumber]
-            instrucotrIDlist.remove(currentrandnumber)
+    
 
 }
 
@@ -45,7 +40,7 @@ function createTuple (id) {
 }
 
 function generateDepartmentData () {
-    for (let i = 1; i < 67; i++) {
+    for (let i = 1; i < 7; i++) {
         departmentJson.department.push(createTuple(i));
     }
     let json = JSON.stringify(departmentJson);

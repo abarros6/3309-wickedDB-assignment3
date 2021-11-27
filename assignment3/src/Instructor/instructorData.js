@@ -7,7 +7,8 @@ function getRndInteger(min, max) {
 }
 
 class instructor {
-    constructor(homeClassroom) {
+    constructor(InstructorId, homeClassroom) {
+        this.InstructorId = InstructorId;
         this.homeClassroom = homeClassroom;
     }
 }
@@ -45,4 +46,4 @@ function generateInstructorData () {
         })
 }
 
-generateClassroomData(); 
+generateInstructorData(); 

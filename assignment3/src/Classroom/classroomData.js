@@ -7,7 +7,8 @@ function getRndInteger(min, max) {
 }
 
 class classroom {
-    constructor(classroomNo, homeInstructor, classroomQuantity) {
+    constructor(classId, classroomNo, homeInstructor, classroomQuantity) {
+        this.classId = classId;
         this.classroomNo = classroomNo;
         this.homeInstructor = homeInstructor;
         this.classroomQuantity = classroomQuantity;
@@ -32,11 +33,11 @@ function getClassroomNo() {
 function getHomeInstructor () {
     let instrucotrIDlist = [];
         for (let i = 1; i <= 66; i++) {
-        list.push(i);
+            instrucotrIDlist.push(i);
         }
 
         for (let i = 1; i < 67; i++)
-            let currentrandnumber = getRndInteger(0,instrucotrIDlist.length)
+            var currentrandnumber = getRndInteger(0,instrucotrIDlist.length)
             return instrucotrIDlist[currentrandnumber]
             instrucotrIDlist.remove(currentrandnumber)
 
