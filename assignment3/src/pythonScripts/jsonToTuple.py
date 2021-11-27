@@ -29,20 +29,6 @@ def convertClassroom(data):
                 x['homeInstructor'], x['classroomQuantity'])))
 
 
-def convertDepartment(data):
-    f = open(data)
-    text = json.load(f)
-    tuples = text["Department"]
-    r = open('DepartmentTuples.txt', "w")
-    r.write(" ")
-    r.close()
-    r = open('DepartmentTuples.txt', "a")
-
-    for x in tuples:
-        r.write(',' + str((x['studentNo'], x['fName'], x['lName'], x['studentAge'], x['studentYear'], x['studentAverage'],
-                           x['creditsToDate'], x['numberOfClasses'], x['classroomNo'], x['instructorNo'])))
-
-
 def convertCourseEquipment(data):
     f = open(data)
     text = json.load(f)
@@ -70,6 +56,33 @@ def convertInstructor(data):
         r.write(',' + str((x['InstructorId'], x['homeClassroom'])))
 
 
+def convertAdminStaff(data):
+    f = open(data)
+    text = json.load(f)
+    tuples = text["adminstaff"]
+    r = open('AdminStaffTuples.txt', "w")
+    r.write(" ")
+    r.close()
+    r = open('AdminStaffTuples.txt', "a")
+
+    for x in tuples:
+        r.write(',' + str((x['AdminNo'], x['position'], x['startDate'])))
+
+
+def convertDepartment(data):
+    f = open(data)
+    text = json.load(f)
+    tuples = text["department"]
+    r = open('DepartmentTuples.txt', "w")
+    r.write(" ")
+    r.close()
+    r = open('DepartmentTuples.txt', "a")
+
+    for x in tuples:
+        r.write(
+            ',' + str((x['deptName'], x['instructorsAssigned'], x['studentsEnrolled'])))
+
+
 convertStudent('../Students/Student.json')
 
 convertInstructor('../Instructor/instructor.json')
@@ -77,3 +90,7 @@ convertInstructor('../Instructor/instructor.json')
 convertCourseEquipment('../CourseEquipment/CoruseEquipment.json')
 
 convertClassroom('../Classroom/classroom.json')
+
+convertDepartment('../Department/department.json')
+
+convertAdminStaff('../AdminStaff/adminstaff.json')
