@@ -1,4 +1,4 @@
-//data can be generated sequentially 
+//data can be generated sequentially
 let Names = require('./names.js');
 
 let names = Names.names;
