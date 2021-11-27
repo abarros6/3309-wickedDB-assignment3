@@ -41,7 +41,8 @@ CREATE TABLE Instructor(
     deptName varchar(255),
     coursesTaught int,
     fName varchar(255),
-    lName varchar(255)
+    lName varchar(255),
+    salary int
 );
 
 CREATE TABLE AdminStaff(
@@ -50,7 +51,8 @@ CREATE TABLE AdminStaff(
     startDate DATE,
     deptName varchar(255),
     fName varchar(255),
-    lName varchar(255)
+    lName varchar(255),
+    salary int
 );
 
 CREATE TABLE Department(
